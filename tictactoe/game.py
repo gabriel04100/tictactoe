@@ -23,7 +23,9 @@ class Game:
             return False
 
     def is_won(self):
-        if np.count_nonzero(self.board ==self.last_symbol) ==3:
+        diag1=[self.board[i,i] for i in range(3)]
+        diag2=[self.board[2-i,i] for i in range(3)]
+        if max(max(np.count_nonzero(self.board ==self.last_symbol,axis=0)),max(np.count_nonzero(self.board ==self.last_symbol,axis=0)),np.count_nonzero(diag1 ==self.last_symbol),np.count_nonzero(diag2 ==self.last_symbol)) ==3:
             return True
         else:
             return False

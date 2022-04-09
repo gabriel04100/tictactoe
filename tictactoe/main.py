@@ -15,7 +15,7 @@ while playing ==1:
         game1.place_symbol(symbol,lign,col)
         game1.display_board()
 
-
+    print("{} win !".format(game1.last_symbol))
     print("Do you want to play a new game ?")
     print("Yes-1 No -0")
     playing=int(input())
